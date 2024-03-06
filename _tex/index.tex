@@ -4,7 +4,7 @@
 \PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
 %
 \documentclass[
-]{agujournal2019}
+]{article}
 
 \usepackage{amsmath,amssymb}
 \usepackage{iftex}
@@ -20,6 +20,8 @@
 \usepackage{lmodern}
 \ifPDFTeX\else  
     % xetex/luatex font selection
+  \setmainfont[]{Latin Modern Roman}
+  \setmathfont[]{Latin Modern Math}
 \fi
 % Use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
@@ -109,11 +111,10 @@
 \newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{\strut#1\strut}}
 \newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 
-\usepackage{url} %this package should fix any errors with URLs in refs.
-\usepackage{lineno}
-\usepackage[inline]{trackchanges} %for better track changes. finalnew option will compile document with changes incorporated.
-\usepackage{soul}
-\linenumbers
+\usepackage{arxiv}
+\usepackage{orcidlink}
+\usepackage{amsmath}
+\usepackage[T1]{fontenc}
 \makeatletter
 \@ifpackageloaded{caption}{}{\usepackage{caption}}
 \AtBeginDocument{%
@@ -163,9 +164,9 @@
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same} % disable monospaced font for URLs
 \hypersetup{
-  pdftitle={La Palma Earthquakes},
-  pdfauthor={Steve Purves; Rowan Cockett},
-  pdfkeywords={La Palma, Earthquakes},
+  pdftitle={SAVANT Bangla Experiment},
+  pdfauthor={Swarnendu Moitra; Dustin A. Chacón; Linnaea Stockall},
+  pdfkeywords={Bangla, Neurolinguistics},
   colorlinks=true,
   linkcolor={blue},
   filecolor={Maroon},
@@ -173,161 +174,64 @@
   urlcolor={Blue},
   pdfcreator={LaTeX via pandoc}}
 
-\journalname{Earth and Space Science}
-
-\draftfalse
-
+\renewcommand{\today}{2024-03-06}
+\newcommand{\runninghead}{A Preprint }
+\title{SAVANT Bangla Experiment}
+\def\asep{\\\\\\ } % default: all authors on same column
+\author{\textbf{Swarnendu
+Moitra}~\orcidlink{0000-0001-6830-3284}\\\\Queen Mary University of
+London\\\\\href{mailto:s.moitra@qmul.ac.uk;
+swarnendu.moitra@gmail.com}{s.moitra@qmul.ac.uk;
+swarnendu.moitra@gmail.com}\asep\textbf{Dustin A.
+Chacón}~\orcidlink{0009-0002-8438-1914}\\\\University of
+Georgia\\\\\\Neuroscience of Language Lab, New York University Abu
+Dhabi\\\\\asep\textbf{Linnaea
+Stockall}~\orcidlink{0000-0002-4700-5154}\\\\Queen Mary University of
+London\\\\}
+\date{2024-03-06}
 \begin{document}
-\title{La Palma Earthquakes}
-
-\authors{Steve Purves\affil{1}, Rowan Cockett\affil{1}}
-\affiliation{1}{Curvenote, }
-\correspondingauthor{Steve Purves}{steve@curvenote.com}
-
-
+\maketitle
 \begin{abstract}
-In September 2021, a significant jump in seismic activity on the island
-of La Palma (Canary Islands, Spain) signaled the start of a volcanic
-crisis that still continues at the time of writing. Earthquake data is
-continually collected and published by the Instituto Geográphico
-Nacional (IGN). \ldots{}
+A key component of linguistic knowledge is the capacity to form and
+identify novel combinations of word stems and affixes, e.g., googleable
+(google + able). Behavioral and electrophysiological studies demonstrate
+that morphologically complex words are processed by initially
+decomposing them into their constituent parts, known as the EARLY FORM
+BASED DECOMPOSITION stage. Followed by morphological RECOMPOSITION which
+involves two distinct stages: checking the syntactic category of the
+stem followed by evaluating its semantic interpretation. Earlier reseach
+has focused primarily in verbal domain using derivational affixes. This
+study examines the visual word recognition of complex words in Bangla/
+Bengali focusing on the derivational prefixes.
 \end{abstract}
+{\bfseries \emph Keywords}
+\def\sep{\textbullet\ }
+Bangla \sep 
+Neurolinguistics
 
-\section*{Plain Language Summary}
-Earthquake data for the island of La Palma from the September 2021
-eruption is found \ldots{}
 
-
+\textsubscript{Source:
+\href{https://SwarMoi.github.io/Moitra-et-al_SAVANT/index-preview.html}{Article
+Notebook}}
 
 \section{Introduction}\label{introduction}
 
-\textsubscript{Source:
-\href{https://SwarMoi.github.io/Moitra-et-al_SAVANT/index.qmd.html}{Article
-Notebook}}
+Introduction goes here. Marrero et al. (2019)
 
-\phantomsection\label{cell-fig-timeline}
-\begin{figure}[H]
-
-\centering{
-
-\includegraphics{index_files/figure-pdf/fig-timeline-1.pdf}
-
-}
-
-\caption{\label{fig-timeline}Timeline of recent earthquakes on La Palma}
-
-\end{figure}%
-
-\textsubscript{Source:
-\href{https://SwarMoi.github.io/Moitra-et-al_SAVANT/index.qmd.html}{Article
-Notebook}}
-
-\textsubscript{Source:
-\href{https://SwarMoi.github.io/Moitra-et-al_SAVANT/index.qmd.html}{Article
-Notebook}}
-
-Based on data up to and including 1971, eruptions on La Palma happen
-every 79.8 years on average.
-
-Studies of the magma systems feeding the volcano, such as Marrero et al.
-(2019), have proposed that there are two main magma reservoirs feeding
-the Cumbre Vieja volcano; one in the mantle (30-40km depth) which
-charges and in turn feeds a shallower crustal reservoir (10-20km depth).
-
-Eight eruptions have been recorded since the late 1400s
-(Figure~\ref{fig-timeline}).
-
-Data and methods are discussed in Section~\ref{sec-data-methods}.
-
-Let \(x\) denote the number of eruptions in a year. Then, \(x\) can be
-modeled by a Poisson distribution
-
-\begin{equation}\phantomsection\label{eq-poisson}{
-p(x) = \frac{e^{-\lambda} \lambda^{x}}{x !}
-}\end{equation}
-
-where \(\lambda\) is the rate of eruptions per year. Using
-Equation~\ref{eq-poisson}, the probability of an eruption in the next
-\(t\) years can be calculated.
-
-\begin{longtable}[]{@{}ll@{}}
-\caption{Recent historic eruptions on La
-Palma}\label{tbl-history}\tabularnewline
-\toprule\noalign{}
-Name & Year \\
-\midrule\noalign{}
-\endfirsthead
-\toprule\noalign{}
-Name & Year \\
-\midrule\noalign{}
-\endhead
-\bottomrule\noalign{}
-\endlastfoot
-Current & 2021 \\
-Teneguía & 1971 \\
-Nambroque & 1949 \\
-El Charco & 1712 \\
-Volcán San Antonio & 1677 \\
-Volcán San Martin & 1646 \\
-Tajuya near El Paso & 1585 \\
-Montaña Quemada & 1492 \\
-\end{longtable}
-
-Table~\ref{tbl-history} summarises the eruptions recorded since the
-colonization of the islands by Europeans in the late 1400s.
-
-\begin{figure}
-
-\centering{
-
-\includegraphics{images/la-palma-map.png}
-
-}
-
-\caption{\label{fig-map}Map of La Palma}
-
-\end{figure}%
-
-La Palma is one of the west most islands in the Volcanic Archipelago of
-the Canary Islands (Figure~\ref{fig-map}).
-
-\begin{figure}[H]
-
-\centering{
-
-\includegraphics{index_files/figure-latex/notebooks-explore-earthquakes-fig-spatial-plot-output-1.png}
-
-}
-
-\caption{\label{fig-spatial-plot}Locations of earthquakes on La Palma
-since 2017}
-
-\end{figure}%
-
-\textsubscript{Source:
-\href{https://SwarMoi.github.io/Moitra-et-al_SAVANT/notebooks/explore-earthquakes-preview.html\#cell-fig-spatial-plot}{Explore
-Earthquakes}}
-
-Figure~\ref{fig-spatial-plot} shows the location of recent Earthquakes
-on La Palma.
-
-\section{Data \& Methods}\label{sec-data-methods}
-
-\section{Conclusion}\label{conclusion}
+\section{The Present Study}\label{the-present-study}
 
 \section*{References}\label{references}
 \addcontentsline{toc}{section}{References}
 
 \phantomsection\label{refs}
 \begin{CSLReferences}{1}{0}
-\vspace{1em}
-
 \bibitem[\citeproctext]{ref-marrero2019}
-Marrero, J., García, A., Berrocoso, M., Llinares, Á., Rodríguez-Losada,
-A., \& Ortiz, R. (2019). Strategies for the development of volcanic
-hazard maps in monogenetic volcanic fields: The example of {La} {Palma}
-({Canary} {Islands}). \emph{Journal of Applied Volcanology}, \emph{8}.
-\url{https://doi.org/10.1186/s13617-019-0085-5}
+Marrero, José, Alicia García, Manuel Berrocoso, Ángeles Llinares,
+Antonio Rodríguez-Losada, and R. Ortiz. 2019. {``Strategies for the
+Development of Volcanic Hazard Maps in Monogenetic Volcanic Fields: The
+Example of {La} {Palma} ({Canary} {Islands}).''} \emph{Journal of
+Applied Volcanology} 8 (July).
+\url{https://doi.org/10.1186/s13617-019-0085-5}.
 
 \end{CSLReferences}
 
