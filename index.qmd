@@ -54,6 +54,71 @@ Introduction goes here. @marrero2019
 ## The Present Study
 
 
+## MATERIALS AND METHODS {#sec-data-methods}
+
+
+
+### Materials
+
+#### Behavioural experiment
+
+#### Tarkianen Localiser
+
+### Participants
+
+### Procedures
+
+
+
+## DATA ANALYSIS
+
+### Behavioural data 
+
+### MEG data
+
+#### The Tarkiainen Localizer
+
+#### The Morphological processing experiment
+
+##### Grammatical Prefixed Words
+
+##### Pseudowords
+
+
+
+## RESULTS
+
+### Behavioral data
+
+#### Accuracy
+
+#### Reaction Time
+
+### MEG data
+
+#### Functional localizer
+
+#### Early, Form-based Decomposition in VWFA
+
+#### Lexeme look-up analysis
+
+##### Log Base Frequency in VWFA
+
+#### Licensing stage in the left temporal lobe
+
+#### Composition stage in the left Orbitofrontal Cortex (OFC)
+
+## DISCUSSION
+
+### Early, Form-based Decomposition
+
+### Lexeme Lookup
+
+### Recombination Stages
+
+## Conclusion
+
+
 ## References {.unnumbered}
 
 :::{#refs}

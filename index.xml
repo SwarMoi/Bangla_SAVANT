@@ -108,6 +108,94 @@ Bengali focusing on the derivational prefixes.</p>
     <sec id="the-present-study">
       <title>2 The Present Study</title>
     </sec>
+    <sec id="sec-data-methods">
+      <title>3 MATERIALS AND METHODS</title>
+      <sec id="materials">
+        <title>3.1 Materials</title>
+        <sec id="behavioural-experiment">
+          <title>3.1.1 Behavioural experiment</title>
+        </sec>
+        <sec id="tarkianen-localiser">
+          <title>3.1.2 Tarkianen Localiser</title>
+        </sec>
+      </sec>
+      <sec id="participants">
+        <title>3.2 Participants</title>
+      </sec>
+      <sec id="procedures">
+        <title>3.3 Procedures</title>
+      </sec>
+    </sec>
+    <sec id="data-analysis">
+      <title>4 DATA ANALYSIS</title>
+      <sec id="behavioural-data">
+        <title>4.1 Behavioural data</title>
+      </sec>
+      <sec id="meg-data">
+        <title>4.2 MEG data</title>
+        <sec id="the-tarkiainen-localizer">
+          <title>4.2.1 The Tarkiainen Localizer</title>
+        </sec>
+        <sec id="the-morphological-processing-experiment">
+          <title>4.2.2 The Morphological processing experiment</title>
+          <sec id="grammatical-prefixed-words">
+            <title>4.2.2.1 Grammatical Prefixed Words</title>
+          </sec>
+          <sec id="pseudowords">
+            <title>4.2.2.2 Pseudowords</title>
+          </sec>
+        </sec>
+      </sec>
+    </sec>
+    <sec id="results">
+      <title>5 RESULTS</title>
+      <sec id="behavioral-data">
+        <title>5.1 Behavioral data</title>
+        <sec id="accuracy">
+          <title>5.1.1 Accuracy</title>
+        </sec>
+        <sec id="reaction-time">
+          <title>5.1.2 Reaction Time</title>
+        </sec>
+      </sec>
+      <sec id="meg-data-1">
+        <title>5.2 MEG data</title>
+        <sec id="functional-localizer">
+          <title>5.2.1 Functional localizer</title>
+        </sec>
+        <sec id="early-form-based-decomposition-in-vwfa">
+          <title>5.2.2 Early, Form-based Decomposition in VWFA</title>
+        </sec>
+        <sec id="lexeme-look-up-analysis">
+          <title>5.2.3 Lexeme look-up analysis</title>
+          <sec id="log-base-frequency-in-vwfa">
+            <title>5.2.3.1 Log Base Frequency in VWFA</title>
+          </sec>
+        </sec>
+        <sec id="licensing-stage-in-the-left-temporal-lobe">
+          <title>5.2.4 Licensing stage in the left temporal lobe</title>
+        </sec>
+        <sec id="composition-stage-in-the-left-orbitofrontal-cortex-ofc">
+          <title>5.2.5 Composition stage in the left Orbitofrontal Cortex
+      (OFC)</title>
+        </sec>
+      </sec>
+    </sec>
+    <sec id="discussion">
+      <title>6 DISCUSSION</title>
+      <sec id="early-form-based-decomposition">
+        <title>6.1 Early, Form-based Decomposition</title>
+      </sec>
+      <sec id="lexeme-lookup">
+        <title>6.2 Lexeme Lookup</title>
+      </sec>
+      <sec id="recombination-stages">
+        <title>6.3 Recombination Stages</title>
+      </sec>
+    </sec>
+    <sec id="conclusion">
+      <title>7 Conclusion</title>
+    </sec>
   </body>
   <back>
     <ref-list>
@@ -255,6 +343,94 @@ Bengali focusing on the derivational prefixes.</p>
       </sec>
       <sec id="the-present-study-nb-article">
         <title>2 The Present Study</title>
+      </sec>
+      <sec id="sec-data-methods-nb-article">
+        <title>3 MATERIALS AND METHODS</title>
+        <sec id="materials-nb-article">
+          <title>3.1 Materials</title>
+          <sec id="behavioural-experiment-nb-article">
+            <title>3.1.1 Behavioural experiment</title>
+          </sec>
+          <sec id="tarkianen-localiser-nb-article">
+            <title>3.1.2 Tarkianen Localiser</title>
+          </sec>
+        </sec>
+        <sec id="participants-nb-article">
+          <title>3.2 Participants</title>
+        </sec>
+        <sec id="procedures-nb-article">
+          <title>3.3 Procedures</title>
+        </sec>
+      </sec>
+      <sec id="data-analysis-nb-article">
+        <title>4 DATA ANALYSIS</title>
+        <sec id="behavioural-data-nb-article">
+          <title>4.1 Behavioural data</title>
+        </sec>
+        <sec id="meg-data-nb-article">
+          <title>4.2 MEG data</title>
+          <sec id="the-tarkiainen-localizer-nb-article">
+            <title>4.2.1 The Tarkiainen Localizer</title>
+          </sec>
+          <sec id="the-morphological-processing-experiment-nb-article">
+            <title>4.2.2 The Morphological processing experiment</title>
+            <sec id="grammatical-prefixed-words-nb-article">
+              <title>4.2.2.1 Grammatical Prefixed Words</title>
+            </sec>
+            <sec id="pseudowords-nb-article">
+              <title>4.2.2.2 Pseudowords</title>
+            </sec>
+          </sec>
+        </sec>
+      </sec>
+      <sec id="results-nb-article">
+        <title>5 RESULTS</title>
+        <sec id="behavioral-data-nb-article">
+          <title>5.1 Behavioral data</title>
+          <sec id="accuracy-nb-article">
+            <title>5.1.1 Accuracy</title>
+          </sec>
+          <sec id="reaction-time-nb-article">
+            <title>5.1.2 Reaction Time</title>
+          </sec>
+        </sec>
+        <sec id="meg-data-1-nb-article">
+          <title>5.2 MEG data</title>
+          <sec id="functional-localizer-nb-article">
+            <title>5.2.1 Functional localizer</title>
+          </sec>
+          <sec id="early-form-based-decomposition-in-vwfa-nb-article">
+            <title>5.2.2 Early, Form-based Decomposition in VWFA</title>
+          </sec>
+          <sec id="lexeme-look-up-analysis-nb-article">
+            <title>5.2.3 Lexeme look-up analysis</title>
+            <sec id="log-base-frequency-in-vwfa-nb-article">
+              <title>5.2.3.1 Log Base Frequency in VWFA</title>
+            </sec>
+          </sec>
+          <sec id="licensing-stage-in-the-left-temporal-lobe-nb-article">
+            <title>5.2.4 Licensing stage in the left temporal lobe</title>
+          </sec>
+          <sec id="composition-stage-in-the-left-orbitofrontal-cortex-ofc-nb-article">
+            <title>5.2.5 Composition stage in the left Orbitofrontal Cortex
+      (OFC)</title>
+          </sec>
+        </sec>
+      </sec>
+      <sec id="discussion-nb-article">
+        <title>6 DISCUSSION</title>
+        <sec id="early-form-based-decomposition-nb-article">
+          <title>6.1 Early, Form-based Decomposition</title>
+        </sec>
+        <sec id="lexeme-lookup-nb-article">
+          <title>6.2 Lexeme Lookup</title>
+        </sec>
+        <sec id="recombination-stages-nb-article">
+          <title>6.3 Recombination Stages</title>
+        </sec>
+      </sec>
+      <sec id="conclusion-nb-article">
+        <title>7 Conclusion</title>
       </sec>
     </body>
     <back>
