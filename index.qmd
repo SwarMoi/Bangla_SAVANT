@@ -49,15 +49,13 @@ library("corrplot")
 
 ## Introduction
 
-Introduction goes here.
+Introduction goes here. @marrero2019.
+
+Consequently.
 
 ## The Present Study
 
-
-
 ## MATERIALS AND METHODS {#sec-data-methods}
-
-
 
 ### Materials
 
@@ -69,11 +67,9 @@ Introduction goes here.
 
 ### Procedures
 
-
-
 ## DATA ANALYSIS
 
-### Behavioural data 
+### Behavioural data
 
 ### MEG data
 
@@ -84,8 +80,6 @@ Introduction goes here.
 ##### Grammatical Prefixed Words
 
 ##### Pseudowords
-
-
 
 ## RESULTS
 
@@ -121,6 +115,5 @@ Introduction goes here.
 
 ## References {.unnumbered}
 
-:::{#refs}
-
+::: {#refs}
 :::

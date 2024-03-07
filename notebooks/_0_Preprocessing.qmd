@@ -1,0 +1,99 @@
+---
+title: "Cleaning"
+author:
+  - name: Swarnendu Moitra
+    attributes:
+        corresponding: true
+    affiliations:
+      - id: qmul
+        name: Queen Mary University of London
+        city: London
+format: 
+  html:
+    self-contained: true
+    anchor-sections: true
+    code-fold: true
+    toc: true
+    number-sections : true
+#  pdf
+editor: visual
+execute: 
+  echo: false
+  warning: false
+---
+
+```{r}
+library(tidyverse)
+library(lme4)
+library(lmerTest)
+library(plotrix)
+source('custom-theme.R')
+```
+
+```{r}
+## Custom function
+clean_fn <- function(var1){
+  var1 <- var1 %>%
+    select("Participant Private ID",
+           "Zone Type",
+           "Reaction Time",
+           "Response",
+           "Correct",
+           "display",
+           "Condition",
+           "Item number",
+           "yesButton") %>%
+    rename(Participant = `Participant Private ID`,
+           RT = 'Reaction Time',
+           Accuracy = Correct,
+           Response.Type = `Zone Type`,
+           Item.no = `Item number`,
+           Condition = Condition,
+           Trial.Type = display,
+           ACC = Correct,
+           ) %>% 
+    filter(Response.Type=="response_keyboard_single", Trial.Type =="Trial") %>%
+    select(!c(Response,Response.Type,Trial.Type))
+  
+  return(var1)
+}
+```
+
+```{r}
+#| echo: false
+# Load the raw dataset
+
+# Import CSV files - Left and Right - PROLIFIC
+Pro_dataL = read_csv(file = "data/raw/Pro_L.csv")
+Pro_dataL$yesButton<-"left"
+Pro_dataR = read_csv(file = "data/raw/Pro_R.csv")
+Pro_dataR$yesButton<-"right"
+
+# Import CSV files - Left and Right - mTurk
+mTurk_dataL = read_csv(file = "data/raw/mTurk_L.csv")
+mTurk_dataL$yesButton<-"left"
+mTurk_dataR = read_csv(file = "data/raw/mTurk_R.csv")
+mTurk_dataR$yesButton<-"right"
+
+PRO_L <- clean_fn(Pro_dataL)
+PRO_R <- clean_fn(Pro_dataR)
+Prolific<- rbind(PRO_L,PRO_R)
+Prolific$Source<-"Prolific"
+mTurk_L <- clean_fn(mTurk_dataL)
+mTurk_R <- clean_fn(mTurk_dataR)
+mTurk<- rbind(mTurk_L,mTurk_R)
+mTurk$Source<-"mTurk"
+
+data <- rbind(Prolific,mTurk)
+#data <- data %>% select(!c(Response,Response.Type,Trial.Type))
+items = read_csv("data/items-prefix-only.csv")
+items <- items %>%  
+  mutate(Item.no = as.numeric(Item.no))
+
+data <- data %>%  
+  mutate(Item.no = as.numeric(Item.no))
+
+data <- data %>% inner_join(items, by=c("Item.no"))
+
+write_csv(data, "data/data.csv")
+```

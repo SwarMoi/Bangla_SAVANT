@@ -1,0 +1,240 @@
+---
+title: "Preprocessing"
+format: html
+---
+
+```{r}
+library("tidyverse")
+library("lme4")
+library("lmerTest")
+library("plotrix")
+library("lattice")
+source('custom-theme.R')
+```
+
+```{r}
+## Import data
+data <- read_csv("data/data.csv")
+```
+
+```{r}
+# Preprocessing Function according to preregistration https://osf.io/kz26a
+
+## Participants rejecting 10% of the grammatical items will be excluded from analysis. 
+## We will first remove responses shorter than 200 ms. Further outlier removal will be performed following Baayen and Millin (2010), by fitting a simple mixed model with only random effects and 
+## excluding all data points with residuals exceeding 2.5 SD.
+
+preprocessing_fn_prereg <- function(var1){
+  data <- var1
+  data_Gramm <- data %>% filter(Condition =="Gramm")
+  data_critical <- data %>% filter(Condition !="Filler")
+
+## Filler Accuracy
+
+  data_ACC_Gramm <- data_Gramm %>%
+    group_by(Participant)%>%
+    summarise(ACC=mean(ACC)*100)
+
+  Fill_rej <- n_distinct(exc_participant <- data_ACC_Gramm %>% filter(ACC < 90))
+  Fill_acc <- n_distinct(inc_participant <- data_ACC_Gramm %>% filter(ACC >= 90))
+
+  Data <-data_critical[!data_critical$Participant %in% exc_participant$Participant,]
+
+## Minimal Trimming
+
+  min_trim_rm <- filter(Data, RT < 200)
+  Data_min_trim<- filter(Data, RT >= 200)
+  
+  return(Data_min_trim)
+}
+```
+
+```{r}
+# Preprocessing Function according to PostHoc analysis
+
+## Participants with less than 75% accuracy of the filler items will be excluded from analysis. 
+## We will first remove responses shorter than 200 ms. Further outlier removal will be performed following Baayen and Millin (2010), by fitting a simple mixed model with only random effects and 
+## excluding all data points with residuals exceeding 2.5 SD.
+
+preprocessing_fn <- function(var1){
+  data <- var1
+  data_filler <- data %>% filter(Condition =="Filler")
+  data_critical <- data %>% filter(Condition !="Filler")
+
+## Filler Accuracy
+
+  data_ACC_filler <- data_filler %>%
+    group_by(Participant)%>%
+    summarise(ACC=mean(ACC)*100)
+
+  Fill_rej <- n_distinct(exc_participant <- data_ACC_filler %>% filter(ACC <75))
+  Fill_acc <- n_distinct(inc_participant <- data_ACC_filler %>% filter(ACC >=75))
+
+  Data <-data_critical[!data_critical$Participant %in% exc_participant$Participant,]
+
+## Minimal Trimming
+
+  min_trim_rm <- filter(Data, RT < 200)
+  Data_min_trim<- filter(Data, RT >= 200)
+  
+  return(Data_min_trim)
+}
+```
+
+```{r}
+##########################
+###   2.5 SD analysis  ###
+##########################
+SD_exclusion <- function(DATA){
+  
+  exceeds <- list()
+  
+  datad <- DATA %>%
+    group_by(Participant, Condition) %>%
+    summarise(Mean=mean(RT), SD=sd(RT), UpperLimit=SD*2.5+Mean)
+  datac <- DATA %>% 
+    group_by(Condition) %>% 
+    summarise(Mean=mean(RT), SD=sd(RT), UpperLimit=SD*2.5+Mean)
+  
+  #grammatical condition
+  data_rt_gramm <- datad %>% filter(Condition=="Gramm")
+  MaxGramm <-max(data_rt_gramm$Mean)
+  UpperLimitGramm <- datac[datac$Condition=="Gramm",]$UpperLimit
+  
+  data_rt_cat<-datad%>%filter(Condition=="CatViol") #CAtViol condition
+  MaxCat <-max(data_rt_cat$Mean)
+  UpperLimitCat <- datac[datac$Condition=="CatViol",]$UpperLimit
+  
+  data_rt_sem<-datad%>%filter(Condition=="SemViol") #SemViol condition
+  MaxSem <-max(data_rt_sem$Mean)
+  UpperLimitSem <- datac[datac$Condition=="SemViol",]$UpperLimit
+  
+  if (MaxGramm > UpperLimitGramm){
+    print ("Gramm Problem")
+    exceeds <- append(exceeds, "Gramm")
+  } else if (MaxCat> UpperLimitCat){
+    print ("CatViol Problem")
+    exceeds <- append(exceeds, "CatViol")
+  } else if  (MaxSem > UpperLimitSem){
+    print ("SemViol Problem")
+    exceeds <- append(exceeds, "SemViol")
+  } else {
+    print ("No Problemo")
+    exceeds <- append(exceeds, "All Good")
+  }  
+}
+```
+
+```{r}
+# Examine and remove some outliers based on Baayen and Milin (2010)
+
+outliers_removal <- function(DATA){
+  print ("Examine and remove some outliers based on Baayen and Milin (2010)")
+  
+  qqmath(~RT | Participant, data = DATA)
+  
+  f = function(dfr)
+    return(shapiro.test(dfr$RT)$p.value)
+  
+  p = as.vector(by(DATA, DATA$Participant, f))
+  names(p) = levels(DATA$Participant)
+  names(p[p < 0.05])
+  
+  print("Revised RT's .................. ")
+  paste("Gramm RT: ",mean(DATA[DATA$Condition=="Gramm",]$RT))
+  paste("CatViol RT: ",mean(DATA[DATA$Condition=="CatViol",]$RT))
+  paste("SemViol RT: ",mean(DATA[DATA$Condition=="SemViol",]$RT))
+  
+  ###########################################
+  ### Model criticism by Baayen and Milin ###
+  ###########################################
+  print("Model criticism by Baayen and Milin")
+  
+  BanFullModel <- lmer(RT ~ (1|Participant) + (1|Item), data = DATA, REML = F)
+  cor(fitted(BanFullModel), DATA$RT)^2
+  
+  BanFullModel_Res = DATA[abs(scale(resid(BanFullModel))) < 2.5,]
+  BanFullModel_2 <- lmer(RT ~ (1|Participant) + (1|Item), data = BanFullModel_Res, REML = F)
+  cor(fitted(BanFullModel_2), BanFullModel_Res$RT)^2
+  
+  ###########################################
+  
+  qqmath(~RT | Participant, data = BanFullModel_Res)
+  
+  f = function(dfr)
+    return(shapiro.test(dfr$RT)$p.value)
+  
+  p = as.vector(by(BanFullModel_Res, BanFullModel_Res$Participant, f))
+  names(p) = levels(BanFullModel_Res$Participant)
+  names(p[p < 0.05])
+  
+  #############################
+  BanFullModel_Res_Correct <- BanFullModel_Res %>% filter(ACC=="1")
+  #############################
+  Gramm <- mean(BanFullModel_Res_Correct[BanFullModel_Res_Correct$Condition=="Gramm",]$RT)
+  CatViol <- mean(BanFullModel_Res_Correct[BanFullModel_Res_Correct$Condition=="CatViol",]$RT)
+  SemViol <- mean(BanFullModel_Res_Correct[BanFullModel_Res_Correct$Condition=="SemViol",]$RT)
+  
+  paste("Gramm RT: ", Gramm)
+  paste("Catviol RT: ", CatViol)
+  paste("Semviol RT: ", SemViol)
+  
+  sprintf( "Gramm vs. CatViol: %f - %f", Gramm, CatViol )
+  sprintf( "Gramm vs. CatViol :  %f - %f", Gramm, SemViol )
+  sprintf( "Gramm vs. CatViol :  %f - %f", SemViol, CatViol )
+  
+  return(BanFullModel_Res_Correct)
+}
+```
+
+## Preregistered Analysis
+
+```{r}
+BAN_Data_prereg <- preprocessing_fn_prereg(data)
+prereg_data_SD <- SD_exclusion(BAN_Data_prereg)
+
+print(prereg_data_SD)
+
+# Examine and remove some outliers based on Baayen and Milin (2010)
+
+DATA_prereg <- BAN_Data_prereg %>% 
+  mutate(
+    Participant = as.factor(Participant),
+    Condition = as.factor(Condition),
+    Item = as.factor(Item.no),
+    Prefix = as.factor(Prefix)
+  )
+
+BAN_Data_PR <- outliers_removal(DATA_prereg)
+BAN_Data_PR <- BAN_Data_PR %>% select(!(Item))
+
+
+write_csv(BAN_Data_prereg, "data/BAN_ACCData_prereg_Trimmed.csv")
+write_csv(BAN_Data_PR, "data/BAN_RTData_prereg_Resid-Trimmed.csv")
+
+```
+
+## Exploratory Analysis
+
+```{r}
+BAN_Data <- preprocessing_fn(data)
+data_SD <- SD_exclusion(BAN_Data)
+
+print(data_SD)
+
+# Examine and remove some outliers based on Baayen and Milin (2010)
+
+DATA <- BAN_Data %>% 
+  mutate(
+    Participant = as.factor(Participant),
+    Condition = as.factor(Condition),
+    Item = as.factor(Item.no),
+    Prefix = as.factor(Prefix)
+  )
+
+DATA <- outliers_removal(DATA)
+DATA <- DATA %>% select(!(Item))
+write_csv(BAN_Data, "data/BAN_ACCData_Trimmed.csv")
+write_csv(DATA, "data/BAN_RTData_Resid-Trimmed.csv")
+
+```
