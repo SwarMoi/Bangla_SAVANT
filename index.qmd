@@ -49,7 +49,7 @@ library("corrplot")
 
 ## Introduction
 
-Introduction goes here. @marrero2019.
+Introduction goes here, following [@stockall_2019_prefix; @neophytou_2018_syntactic]
 
 Consequently.
 
