@@ -74,10 +74,10 @@ Dhabi</institution>
         <corresp id="cor-1">s.moitra@qmul.ac.uk;
 swarnendu.moitra@gmail.com</corresp>
       </author-notes>
-      <pub-date date-type="pub" publication-format="electronic" iso-8601-date="2024-03-06">
+      <pub-date date-type="pub" publication-format="electronic" iso-8601-date="2024-03-07">
         <year>2024</year>
         <month>3</month>
-        <day>6</day>
+        <day>7</day>
       </pub-date>
       <history/>
       <abstract>
@@ -102,8 +102,12 @@ Bengali focusing on the derivational prefixes.</p>
   <body>
     <sec id="introduction">
       <title>1 Introduction</title>
-      <p>Introduction goes here. Marrero et al.
-  (<xref alt="2019" rid="ref-marrero2019" ref-type="bibr">2019</xref>)</p>
+      <p>Introduction goes here, following
+  (<xref alt="Stockall et al. 2019" rid="ref-stockall_2019_prefix" ref-type="bibr">Stockall
+  et al. 2019</xref>;
+  <xref alt="Neophytou et al. 2018" rid="ref-neophytou_2018_syntactic" ref-type="bibr">Neophytou
+  et al. 2018</xref>)</p>
+      <p>Consequently.</p>
     </sec>
     <sec id="the-present-study">
       <title>2 The Present Study</title>
@@ -200,47 +204,71 @@ Bengali focusing on the derivational prefixes.</p>
   <back>
     <ref-list>
       <title>References</title>
-      <ref id="ref-marrero2019">
+      <ref id="ref-stockall_2019_prefix">
         <element-citation publication-type="article-journal">
           <person-group person-group-type="author">
             <name>
-              <surname>Marrero</surname>
-              <given-names>José</given-names>
+              <surname>Stockall</surname>
+              <given-names>Linnaea</given-names>
             </name>
             <name>
-              <surname>García</surname>
-              <given-names>Alicia</given-names>
+              <surname>Manouilidou</surname>
+              <given-names>Christina</given-names>
             </name>
             <name>
-              <surname>Berrocoso</surname>
-              <given-names>Manuel</given-names>
+              <surname>Gwilliams</surname>
+              <given-names>Laura</given-names>
             </name>
             <name>
-              <surname>Llinares</surname>
-              <given-names>Ángeles</given-names>
+              <surname>Neophytou</surname>
+              <given-names>Kyriaki</given-names>
             </name>
             <name>
-              <surname>Rodríguez-Losada</surname>
-              <given-names>Antonio</given-names>
-            </name>
-            <name>
-              <surname>Ortiz</surname>
-              <given-names>R.</given-names>
+              <surname>Marantz</surname>
+              <given-names>Alec</given-names>
             </name>
           </person-group>
-          <article-title>Strategies for the development of volcanic hazard maps in monogenetic volcanic fields: The example of La Palma (Canary Islands)</article-title>
-          <source>Journal of Applied Volcanology</source>
-          <year iso-8601-date="2019-07">2019</year>
-          <month>07</month>
-          <volume>8</volume>
-          <pub-id pub-id-type="doi">10.1186/s13617-019-0085-5</pub-id>
-          <fpage/>
-          <lpage/>
+          <article-title>Prefix stripping re-re-revisited: MEG investigations of morphological decomposition and recomposition</article-title>
+          <source>Frontiers in Psychology</source>
+          <year iso-8601-date="2019-09">2019</year>
+          <month>09</month>
+          <volume>10</volume>
+          <pub-id pub-id-type="doi">10.3389/fpsyg.2019.01964</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="ref-neophytou_2018_syntactic">
+        <element-citation publication-type="article-journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Neophytou</surname>
+              <given-names>K.</given-names>
+            </name>
+            <name>
+              <surname>Manouilidou</surname>
+              <given-names>C.</given-names>
+            </name>
+            <name>
+              <surname>Stockall</surname>
+              <given-names>L.</given-names>
+            </name>
+            <name>
+              <surname>Marantz</surname>
+              <given-names>A.</given-names>
+            </name>
+          </person-group>
+          <article-title>Syntactic and semantic restrictions on morphological recomposition: MEG evidence from greek</article-title>
+          <source>Brain and Language</source>
+          <year iso-8601-date="2018-08">2018</year>
+          <month>08</month>
+          <volume>183</volume>
+          <pub-id pub-id-type="doi">10.1016/j.bandl.2018.05.003</pub-id>
+          <fpage>11</fpage>
+          <lpage>20</lpage>
         </element-citation>
       </ref>
     </ref-list>
   </back>
-  <sub-article article-type="notebook" id="nb-4-nb-article">
+  <sub-article article-type="notebook" id="nb-2-nb-article">
     <front-stub>
       <title-group>
         <article-title>SAVANT Bangla Experiment</article-title>
@@ -338,8 +366,12 @@ Bengali focusing on the derivational prefixes.</p>
       </sec>
       <sec id="introduction-nb-article">
         <title>1 Introduction</title>
-        <p>Introduction goes here. Marrero et al.
-  (<xref alt="2019" rid="ref-marrero2019-nb-article" ref-type="bibr">2019</xref>)</p>
+        <p>Introduction goes here, following
+  (<xref alt="Stockall et al. 2019" rid="ref-stockall_2019_prefix-nb-article" ref-type="bibr">Stockall
+  et al. 2019</xref>;
+  <xref alt="Neophytou et al. 2018" rid="ref-neophytou_2018_syntactic-nb-article" ref-type="bibr">Neophytou
+  et al. 2018</xref>)</p>
+        <p>Consequently.</p>
       </sec>
       <sec id="the-present-study-nb-article">
         <title>2 The Present Study</title>
@@ -436,114 +468,69 @@ Bengali focusing on the derivational prefixes.</p>
     <back>
       <ref-list>
         <title>References</title>
-        <ref id="ref-marrero2019-nb-article">
+        <ref id="ref-stockall_2019_prefix-nb-article">
           <element-citation publication-type="article-journal">
             <person-group person-group-type="author">
               <name>
-                <surname>Marrero</surname>
-                <given-names>José</given-names>
+                <surname>Stockall</surname>
+                <given-names>Linnaea</given-names>
               </name>
               <name>
-                <surname>García</surname>
-                <given-names>Alicia</given-names>
+                <surname>Manouilidou</surname>
+                <given-names>Christina</given-names>
               </name>
               <name>
-                <surname>Berrocoso</surname>
-                <given-names>Manuel</given-names>
+                <surname>Gwilliams</surname>
+                <given-names>Laura</given-names>
               </name>
               <name>
-                <surname>Llinares</surname>
-                <given-names>Ángeles</given-names>
+                <surname>Neophytou</surname>
+                <given-names>Kyriaki</given-names>
               </name>
               <name>
-                <surname>Rodríguez-Losada</surname>
-                <given-names>Antonio</given-names>
-              </name>
-              <name>
-                <surname>Ortiz</surname>
-                <given-names>R.</given-names>
+                <surname>Marantz</surname>
+                <given-names>Alec</given-names>
               </name>
             </person-group>
-            <article-title>Strategies for the development of volcanic hazard maps in monogenetic volcanic fields: The example of La Palma (Canary Islands)</article-title>
-            <source>Journal of Applied Volcanology</source>
-            <year iso-8601-date="2019-07">2019</year>
-            <month>07</month>
-            <volume>8</volume>
-            <pub-id pub-id-type="doi">10.1186/s13617-019-0085-5</pub-id>
-            <fpage/>
-            <lpage/>
+            <article-title>Prefix stripping re-re-revisited: MEG investigations of morphological decomposition and recomposition</article-title>
+            <source>Frontiers in Psychology</source>
+            <year iso-8601-date="2019-09">2019</year>
+            <month>09</month>
+            <volume>10</volume>
+            <pub-id pub-id-type="doi">10.3389/fpsyg.2019.01964</pub-id>
+          </element-citation>
+        </ref>
+        <ref id="ref-neophytou_2018_syntactic-nb-article">
+          <element-citation publication-type="article-journal">
+            <person-group person-group-type="author">
+              <name>
+                <surname>Neophytou</surname>
+                <given-names>K.</given-names>
+              </name>
+              <name>
+                <surname>Manouilidou</surname>
+                <given-names>C.</given-names>
+              </name>
+              <name>
+                <surname>Stockall</surname>
+                <given-names>L.</given-names>
+              </name>
+              <name>
+                <surname>Marantz</surname>
+                <given-names>A.</given-names>
+              </name>
+            </person-group>
+            <article-title>Syntactic and semantic restrictions on morphological recomposition: MEG evidence from greek</article-title>
+            <source>Brain and Language</source>
+            <year iso-8601-date="2018-08">2018</year>
+            <month>08</month>
+            <volume>183</volume>
+            <pub-id pub-id-type="doi">10.1016/j.bandl.2018.05.003</pub-id>
+            <fpage>11</fpage>
+            <lpage>20</lpage>
           </element-citation>
         </ref>
       </ref-list>
     </back>
-  </sub-article>
-  <sub-article article-type="notebook" id="nb-2-nb-1">
-    <front-stub>
-      <title-group>
-        <article-title>Explore Earthquakes</article-title>
-      </title-group>
-      <contrib-group>
-        <contrib contrib-type="author">
-          <name>
-            <surname>Wickham</surname>
-            <given-names>Charlotte</given-names>
-          </name>
-          <string-name>Charlotte Wickham</string-name>
-        </contrib>
-      </contrib-group>
-    </front-stub>
-    <body>
-      <sec id="nb-code-cell-1-nb-1" specific-use="notebook-code">
-        <code language="r script">library(tidyverse)
-</code>
-        <sec id="nb-code-cell-1-output-0-nb-1" specific-use="notebook-output">
-          <preformat>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-✔ dplyr     1.1.3     ✔ readr     2.1.4
-✔ forcats   1.0.0     ✔ stringr   1.5.0
-✔ ggplot2   3.4.3     ✔ tibble    3.2.1
-✔ lubridate 1.9.2     ✔ tidyr     1.3.0
-✔ purrr     1.0.2     
-── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-✖ dplyr::filter() masks stats::filter()
-✖ dplyr::lag()    masks stats::lag()
-ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</preformat>
-        </sec>
-      </sec>
-      <p>Read a clean version of data:</p>
-      <sec id="nb-code-cell-2-nb-1" specific-use="notebook-code">
-        <code language="r script">la_palma &lt;- read_csv("la-palma.csv")
-</code>
-        <sec id="nb-code-cell-2-output-0-nb-1" specific-use="notebook-output">
-          <preformat>Rows: 11347 Columns: 5
-── Column specification ────────────────────────────────────────────────────────
-Delimiter: ","
-dbl  (4): Longitude, Latitude, Depth(km), Magnitude
-dttm (1): DateTime
-
-ℹ Use `spec()` to retrieve the full column specification for this data.
-ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</preformat>
-        </sec>
-      </sec>
-      <p>Create spatial plot:</p>
-      <sec id="cell-fig-spatial-plot-nb-1" specific-use="notebook-code">
-        <code language="r script">#|   against longitude."
-la_palma |&gt; 
-  ggplot(aes(Longitude, Latitude)) +
-  geom_point(aes(color = Magnitude, size = 40-`Depth(km)`)) +
-  scale_color_viridis_c(direction = -1) + 
-  scale_size(range = c(0.5, 2), guide = "none") +
-  theme_bw()
-</code>
-        <fig id="fig-spatial-plot-nb-1">
-          <caption>
-            <p>Locations of earthquakes on La Palma since
-  2017</p>
-          </caption>
-          <graphic mimetype="image" mime-subtype="png" xlink:href="explore-earthquakes_files/figure-jats/fig-spatial-plot-1.png"/>
-        </fig>
-      </sec>
-    </body>
-    <back>
-</back>
   </sub-article>
 </article>

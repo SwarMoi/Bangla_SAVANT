@@ -49,14 +49,13 @@ library("corrplot")
 
 ## Introduction
 
-Introduction goes here. @marrero2019
+Introduction goes here, following [@stockall_2019_prefix; @neophytou_2018_syntactic]
+
+Consequently.
 
 ## The Present Study
 
-
 ## MATERIALS AND METHODS {#sec-data-methods}
-
-
 
 ### Materials
 
@@ -68,11 +67,9 @@ Introduction goes here. @marrero2019
 
 ### Procedures
 
-
-
 ## DATA ANALYSIS
 
-### Behavioural data 
+### Behavioural data
 
 ### MEG data
 
@@ -83,8 +80,6 @@ Introduction goes here. @marrero2019
 ##### Grammatical Prefixed Words
 
 ##### Pseudowords
-
-
 
 ## RESULTS
 
@@ -118,9 +113,7 @@ Introduction goes here. @marrero2019
 
 ## Conclusion
 
-
 ## References {.unnumbered}
 
-:::{#refs}
-
+::: {#refs}
 :::
