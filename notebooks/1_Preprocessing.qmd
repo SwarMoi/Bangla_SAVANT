@@ -1,6 +1,8 @@
 ---
 title: "Preprocessing"
 format: html
+execute: 
+  cache: true
 ---
 
 ```{r}
@@ -9,7 +11,7 @@ library("lme4")
 library("lmerTest")
 library("plotrix")
 library("lattice")
-source('custom-theme.R')
+source('data/custom-theme.R')
 ```
 
 ```{r}
@@ -217,6 +219,7 @@ write_csv(BAN_Data_PR, "data/BAN_RTData_prereg_Resid-Trimmed.csv")
 ## Exploratory Analysis
 
 ```{r}
+#| label: setup
 BAN_Data <- preprocessing_fn(data)
 data_SD <- SD_exclusion(BAN_Data)
 

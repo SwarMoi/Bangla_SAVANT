@@ -40,6 +40,7 @@ bibliography: references.bib
 citation:
   container-title: PlosONE
 number-sections: true
+
 ---
 
 ```{r}
@@ -51,7 +52,10 @@ library("corrplot")
 
 Introduction goes here, following [@stockall_2019_prefix; @neophytou_2018_syntactic]
 
+
 Consequently.
+
+Here is a sample stimuli: \ben{প্রতিশব্দ আক্ষেপ}
 
 ## The Present Study
 
@@ -81,7 +85,11 @@ Consequently.
 
 ##### Pseudowords
 
-## RESULTS
+{{< embed notebooks/1_Preprocessing.qmd#setup >}} \## RESULTS
+
+```{r}
+
+```
 
 ### Behavioral data
 

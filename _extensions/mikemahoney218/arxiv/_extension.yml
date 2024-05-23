@@ -26,9 +26,12 @@ contributes:
         \usepackage{orcidlink}
         \usepackage{amsmath}
         \usepackage[T1]{fontenc}
+        \newfontfamily\ben{kalpurush.ttf}
       template-partials: ["partials/_authors.tex", "partials/title.tex", "partials/before-body.tex"]
       mathfont: "Latin Modern Math"
       mainfont: "Latin Modern Roman"
+      #mainfont: "Noto Sans Bengali UI Regular"
+      pdf-engine: lualatex
       format-resources:
         # Add here the resources required for the PDF rendering
         - arxiv.sty
