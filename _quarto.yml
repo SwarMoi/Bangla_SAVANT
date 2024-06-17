@@ -7,9 +7,11 @@ execute:
 format:
   html:
     toc: true
+    linestretch: 2
     comments:
       hypothesis: true
-  docx: default
+  docx:
+    linestretch: 2
   jats: default
   #agu-pdf: default
   arxiv-pdf: default

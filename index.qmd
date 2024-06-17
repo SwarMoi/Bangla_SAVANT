@@ -40,7 +40,6 @@ bibliography: references.bib
 citation:
   container-title: PlosONE
 number-sections: true
-
 ---
 
 ```{r}
@@ -52,28 +51,69 @@ library("corrplot")
 
 Introduction goes here, following [@stockall_2019_prefix; @neophytou_2018_syntactic]
 
+## Results
 
-Consequently.
+### Behavioral results
 
-Here is a sample stimuli: \ben{প্রতিশব্দ আক্ষেপ}
+### MEG data
 
-## The Present Study
+#### Functional localizer
 
-## MATERIALS AND METHODS {#sec-data-methods}
+#### Early, Form-based Decomposition in VWFA
+
+#### Licensing stage in the left temporal lobe
+
+#### Composition stage in the left Orbitofrontal Cortex (OFC)
+
+## Discussions
+
+## METHODS {#sec-data-methods}
 
 ### Materials
 
 #### Behavioural experiment
 
+The study follows a 3 x 2 design, with the factor "Condition" having three levels: \[1\] Syntactic **Cat**egory **Viol**ations (**CatViol**), \[2\] **Sem**antic **Viol**ations (**SemViol**), and \[3\] **Gramm**atical (**Gramm**) condition, and the factor "Prefix" having two levels: \[1\] **দু্ঃ-** (*duḥ*) and \[2\] **প্রতি-** (*prôti*). These derivational prefixes grammatically combine with abstract noun stems. They are polysemous and can be idiosyncratic, although several dominant meanings can be determined, similar to other Indo-Aryan prefixes. The violations of the morphological rules were achieved by adding the two prefixes to a base with which they cannot be combined according to the rules of Bangla. The semantic violation condition (SemViol) was created by adding the same two prefixes to nouns which mismatch the prefix’s conceptual semantic requirement that it attach to stems referring to abstract entities. For example, দু্ঃ duḥ added to the concrete noun কলম (kôlôm) ‘pen’ creates the pseudoword \*দুঃকলম (duḥkôlôm). The category violation condition (CatViol) was created by adding the nominal prefixes to adjectival stems, e.g., দু্ঃ duḥ added to লাল lal ‘red’ to create the pseudoword \*দুর্লাল durlal.
+
+Filler items were created by adding concrete nouns with classifier, case, or number suffixes (classifier িট -ṭi; plural classifiers গুলো -*gulo*, গুলি -*guli*; human classifier জন -*jôn*; accusative case েক -*ke*; locative case য়/এ -*e*; classifier+genitive case িটর -*ṭi*-*r*, টার, -*ṭa*-*r*; plural genitive/dative েদর -*der*). The filler items were morphologically complex and concrete to ensure that there were grammatical stimuli with concrete stems [see @prereg, for details on the stimuli selection]. To ensure that the whole word lengths were not significantly different, we matched for whole word lengths, between both the conditions and prefixes by calculating number of characters using the nchar() function in R [@rcoreteam_2024_r] (all ps \> 0.2). Taking together we had 26 Grammatical items beginning with দু্ঃ duḥ, 34 beginning with প্রতি prôti, 38 items for each violation condition per prefix, and 92 grammatical filler items, resulting in 304 items (152 grammatical, 152 ungrammatical).
+
 #### Tarkianen Localiser
 
 ### Participants
 
+#### Online Behavioural
+
+X (Y female; average age Z yrs) adult native speakers of Bangla, were recruited online via Prolific. All participants met the language-related requirements that we had pre-established for our study. Post completion they were compensated for their time.
+
+#### MEG
+
+Twenty-three right-handed (mean age = X), self-reported native speakers of Bangla with normal or corrected-to-normal vision participated in the study. They were recruited from the New York University and surrounding communities in Abu Dhabi. A language history questionnaire was used to screen for eligibility, and all participants provided written informed consent before the experiment. Compensation was provided upon completion.
+
 ### Procedures
+
+#### Online Behavioural
+
+The experiments were conducted as an online lexical decision task, and participants were recruited via Prolific. The entire task was administered on participants' computers (desktop or laptop) using Gorilla. A fixation cross first appeared before the stimulus for 500 ms, followed by the word, which remained on the screen for 2000 ms. The inter-stimulus interval (ISI) varied between 300-500 ms. The stimuli were presented in black Vrinda Bangla font in Bangla text (font size 25) against a gray background. The experiment started with ten practice trials and then continued The stimulus was divided into two blocks with completely randomized stimulus order for each block. The order of presentation of the blocks alternated between participants.
+
+#### MEG
+
+The same experiment was repeated for the participants doing MEG using Presentation® software (Version 23.0, Neurobehavioral Systems, Inc., Berkeley, CA, www.neurobs.com). The stimuli were projected onto a screen inside the Magnetically Shielded Room (MSR; Vacuumschmelze, Hanau, Germany) using a projector. 
 
 ## DATA ANALYSIS
 
 ### Behavioural data
+
+All statistical analyses were performed in R (v4.3.2) [@rcoreteam_2024_r] using the lme4 package [@lme4]. Based on our initial analysis plan outlined in our preregistration, we stated that participants who reject more than 10% of the grammatical items will be excluded from the analysis. However, this resulted in losing X% of participants, making it unviable. We revised our exclusion criteria to retain participants with 75% and above Accuracy for filler conditions. Rest of the analysis followed the preregistration, in the following order.
+
+1.  For the reaction time (RT) analysis, we performed minimal trimming i.e., RTs faster than 200ms were removed.
+
+2.  Further outlier trimming was done following @Baayen2010 (we fit a simple mixed model with only random effects and excluded all data points with residuals exceeding 2.5 SD)
+
+3.  Incorrect responses were then excluded.
+
+Acceptance rates and cleaned RTs were then analyzed using (generalized) linear mixed-effects modeling as implemented in the lme4 package \[\] [@bates_2019_fitting].
+
+We included the models with Condition (Gramm, CatViol, SemViol) and Prefix Type (duḥ-, prôti-) as fixed effects along with their interaction. We set 'Gramm' as the reference level for Condition in order to compare the difference in RT and acceptance rates between the two violation conditions. To test for significance, we used log-likelihood ratio tests to compare models with and without the interaction (Condition \* Prefix Type vs. Condition + Prefix Type) using the anova() function. We applied multiple comparison correction using the emmeans package [@emmeans] in R. Our alpha level was set at .05. We progressively simplified the model to choose the best random effects structure from the Maximal model (as defined in our preregistration) following @Barr2013.
 
 ### MEG data
 
@@ -85,41 +125,6 @@ Here is a sample stimuli: \ben{প্রতিশব্দ আক্ষেপ}
 
 ##### Pseudowords
 
-{{< embed notebooks/1_Preprocessing.qmd#setup >}} \## RESULTS
-
-```{r}
-
-```
-
-### Behavioral data
-
-#### Accuracy
-
-#### Reaction Time
-
-### MEG data
-
-#### Functional localizer
-
-#### Early, Form-based Decomposition in VWFA
-
-#### Lexeme look-up analysis
-
-##### Log Base Frequency in VWFA
-
-#### Licensing stage in the left temporal lobe
-
-#### Composition stage in the left Orbitofrontal Cortex (OFC)
-
-## DISCUSSION
-
-### Early, Form-based Decomposition
-
-### Lexeme Lookup
-
-### Recombination Stages
-
-## Conclusion
 
 ## References {.unnumbered}
 

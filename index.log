@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.17.0 (TeX Live 2023)  (format=lualatex 2024.3.4)  17 MAR 2024 23:19
+This is LuaHBTeX, Version 1.17.0 (TeX Live 2023)  (format=lualatex 2024.3.4)  23 MAY 2024 09:01
  restricted system commands enabled.
 **index.tex
 (./index.tex
@@ -1198,8 +1198,8 @@ Here is how much of LuaTeX's memory you used:
  125086,1977958 words of node,token memory allocated
  5890 words of node memory still in use:
    31 hlist, 1 vlist, 2 rule, 24 mark, 37 disc, 15 local_par, 1 dir, 130 glue, 28 kern, 84 penalty, 2 margin_kern, 341 glyph, 169 attribute, 71 glue_spec, 169 attribute_list, 1 temp, 28 write, 1 user_defined, 14 pdf_dest nodes
-   avail lists: 1:2,2:786,3:626,4:140,5:292,6:37,7:5244,8:2,9:447,10:4,11:396
+   avail lists: 1:2,2:786,3:626,4:137,5:292,6:37,7:5241,8:2,9:447,10:4,11:396
  53980 multiletter control sequences out of 65536+600000
- 82 fonts using 16046407 bytes
+ 82 fonts using 16046583 bytes
  99i,13n,123p,1001b,863s stack positions out of 10000i,1000n,20000p,200000b,200000s
 !  ==> Fatal error occurred, no output PDF file produced!
